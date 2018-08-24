@@ -1,0 +1,14 @@
+@tailwind preflight;
+@tailwind utilities;
+@import "_vars.scss";
+.p-container {
+  @apply .bg-blue-lightest .py-6 .px-4;
+}
+
+nav {
+  a {
+    color: aqua;
+    text-decoration: none;
+    padding: 10px;
+  }
+}
