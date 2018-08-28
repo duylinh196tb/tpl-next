@@ -18,6 +18,7 @@
     "next": "^6.1.1",
     "node-sass": "^4.9.3",
     "postcss-easy-import": "^3.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "tailwindcss": "^0.6.5"

@@ -13,6 +13,13 @@ app
     const server = express();
     server.use("/api", showRoute);
 
+    server.get("/post/:slug", (req, res) => {
+      const actualPage = "/post";
+      const queryParams = { title: req.params.slug };
+
+      return app.render(req, res, actualPage, queryParams);
+    });
+
     server.get("*", (req, res) => handle(req, res));
 
     server.listen(PORT, err => {

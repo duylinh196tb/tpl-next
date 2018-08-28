@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/', function() {
           var comp =
-      webpackJsonp([5],{
+      webpackJsonp([6],{
 
 /***/ "../node_modules/@babel/runtime/core-js/json/stringify.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -18,6 +18,89 @@ var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
 module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
   return $JSON.stringify.apply($JSON, arguments);
 };
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/lib/css-base.js":
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -453,6 +536,14 @@ function isLocal(href) {
 }
 
 var warnLink = (0, _utils.execOnce)(_utils.warn);
+
+/***/ }),
+
+/***/ "../node_modules/next/head.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("../node_modules/next/dist/lib/head.js")
+
 
 /***/ }),
 
@@ -968,49 +1059,112 @@ var NavBar = function NavBar() {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("../node_modules/react/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_NavBar__ = __webpack_require__("./components/NavBar/index.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_style_scss__ = __webpack_require__("./scss/style.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scss_style_scss__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("../node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("../node_modules/next/head.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("../node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("../node_modules/next/link.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__("../node_modules/next/node_modules/prop-types/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NavBar__ = __webpack_require__("./components/NavBar/index.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scss_style_scss__ = __webpack_require__("./scss/style.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scss_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__scss_style_scss__);
+
 
 
 var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pages/index.jsx";
 
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("section", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_NavBar__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
-    className: "",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    }
-  }, "Hello World!!!"), "dsds", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-    className: "border border-green ",
+
+
+
+
+
+
+var Index = function Index(_ref) {
+  var title = _ref.title,
+      slug = _ref.slug;
+  return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("section", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-    type: "submit",
-    className: "border-2 border-blue hover:border-red ...",
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }, "Button"));
-});
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, "index")), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_NavBar__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    }
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("h1", {
+    className: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    }
+  }, "Hello World!!!"), "dsds", __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("input", {
+    className: "border border-green ",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
+    as: "/post/".concat(slug),
+    href: "/post?title=".concat(title),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
+  }, " Post")));
+};
+
+Index.getInitialProps =
+/*#__PURE__*/
+_asyncToGenerator(
+/*#__PURE__*/
+__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
+  var title, slug;
+  return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          title = "Title on nextjs";
+          slug = "post-next-js";
+          return _context.abrupt("return", {
+            title: title,
+            slug: slug
+          });
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _callee, this);
+}));
+Index.propTypes = {
+  title: __WEBPACK_IMPORTED_MODULE_4_prop_types___default.a.string.isRequired,
+  slug: __WEBPACK_IMPORTED_MODULE_4_prop_types___default.a.string.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Index);
     (function (Component, route) {
       if(!Component) return
       if (false) return
@@ -1033,7 +1187,7 @@ var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pag
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.jsx");
@@ -1041,7 +1195,7 @@ module.exports = __webpack_require__("./pages/index.jsx");
 
 /***/ })
 
-},[4])
+},[5])
           return { page: comp.default }
         })
       ;

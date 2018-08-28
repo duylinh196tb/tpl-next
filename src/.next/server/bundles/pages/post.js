@@ -67,41 +67,65 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/about.jsx":
+/***/ "./pages/post.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 
 
-var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pages/about.jsx";
+var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pages/post.jsx";
 
 
-var About = function About() {
+
+var Post = function Post(_ref) {
+  var url = _ref.url;
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 5
     }
-  }, "about page");
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    }
+  }, url.query.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, "This is the Post"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (About);
+Post.propTypes = {
+  url: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Post);
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/about.jsx");
+module.exports = __webpack_require__("./pages/post.jsx");
 
+
+/***/ }),
+
+/***/ "prop-types":
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 
@@ -113,4 +137,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=about.js.map
+//# sourceMappingURL=post.js.map

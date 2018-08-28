@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -142,49 +142,112 @@ var NavBar = function NavBar() {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_NavBar__ = __webpack_require__("./components/NavBar/index.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_style_scss__ = __webpack_require__("./scss/style.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scss_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NavBar__ = __webpack_require__("./components/NavBar/index.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scss_style_scss__ = __webpack_require__("./scss/style.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scss_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__scss_style_scss__);
+
 
 
 var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pages/index.jsx";
 
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("section", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_NavBar__["a" /* default */], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
-    className: "",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    }
-  }, "Hello World!!!"), "dsds", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-    className: "border border-green ",
+
+
+
+
+
+
+var Index = function Index(_ref) {
+  var title = _ref.title,
+      slug = _ref.slug;
+  return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("section", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
-  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-    type: "submit",
-    className: "border-2 border-blue hover:border-red ...",
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }, "Button"));
-});
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, "index")), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_NavBar__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    }
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("h1", {
+    className: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    }
+  }, "Hello World!!!"), "dsds", __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("input", {
+    className: "border border-green ",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }), __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
+    as: "/post/".concat(slug),
+    href: "/post?title=".concat(title),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }, __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
+  }, " Post")));
+};
+
+Index.getInitialProps =
+/*#__PURE__*/
+_asyncToGenerator(
+/*#__PURE__*/
+__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
+  var title, slug;
+  return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          title = "Title on nextjs";
+          slug = "post-next-js";
+          return _context.abrupt("return", {
+            title: title,
+            slug: slug
+          });
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _callee, this);
+}));
+Index.propTypes = {
+  title: __WEBPACK_IMPORTED_MODULE_4_prop_types___default.a.string.isRequired,
+  slug: __WEBPACK_IMPORTED_MODULE_4_prop_types___default.a.string.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -195,7 +258,7 @@ var _jsxFileName = "/home/duylinh196tb/Documents/Project/NEXT/nextjs-tot/src/pag
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.jsx");
@@ -203,10 +266,31 @@ module.exports = __webpack_require__("./pages/index.jsx");
 
 /***/ }),
 
+/***/ "@babel/runtime/regenerator":
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+
+/***/ "next/head":
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
+
+/***/ }),
+
 /***/ "next/link":
 /***/ (function(module, exports) {
 
 module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "prop-types":
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 
